@@ -19,13 +19,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InfoCell" rowHeight="80" id="6yR-vu-BpG">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InfoCell" rowHeight="80" id="6yR-vu-BpG" customClass="MainScreenCell" customModule="AXONtest" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6yR-vu-BpG" id="kNL-kH-FFw">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Grs-9T-cYC">
+                                            <rect key="frame" x="16" y="11" width="69" height="58"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="69" id="Txe-aM-pp1"/>
+                                                <constraint firstAttribute="height" constant="58" id="YrR-zL-EbB"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Grs-9T-cYC" firstAttribute="top" secondItem="kNL-kH-FFw" secondAttribute="topMargin" id="8AI-Mp-50j"/>
+                                        <constraint firstItem="Grs-9T-cYC" firstAttribute="bottom" secondItem="kNL-kH-FFw" secondAttribute="bottomMargin" id="QLR-WY-YL8"/>
+                                        <constraint firstItem="Grs-9T-cYC" firstAttribute="leading" secondItem="kNL-kH-FFw" secondAttribute="leadingMargin" id="TMo-iQ-ZGA"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imgView" destination="Grs-9T-cYC" id="ldT-8G-0R7"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
