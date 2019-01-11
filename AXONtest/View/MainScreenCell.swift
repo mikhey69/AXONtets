@@ -12,6 +12,12 @@ class MainScreenCell: UITableViewCell {
 
     @IBOutlet weak var imgView: UIImageView!
     
+    @IBOutlet weak var nameLbl: UILabel!
+    
+    @IBOutlet weak var ageLbl: UILabel!
+    
+    var id = ""
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

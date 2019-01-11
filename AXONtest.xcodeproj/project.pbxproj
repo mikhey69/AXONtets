@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		962F8CE75D25AF61D304E9DF /* Pods_AXONtest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0AE89B52591E48A07021D7B /* Pods_AXONtest.framework */; };
+		D63A019821E959CD00DD14CF /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63A019721E959CD00DD14CF /* DetailsView.swift */; };
 		D66FF6A721E8EF0100DEC6AF /* MainScreenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66FF6A621E8EF0100DEC6AF /* MainScreenCell.swift */; };
 		FF179FCC21E8B6A00076D7B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF179FCB21E8B6A00076D7B6 /* AppDelegate.swift */; };
 		FF179FD121E8B6A00076D7B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF179FCF21E8B6A00076D7B6 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		4E181EF26148F3AF7C078A71 /* Pods-AXONtest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXONtest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AXONtest/Pods-AXONtest.debug.xcconfig"; sourceTree = "<group>"; };
 		A12AE266D1F2D88594B1AEA7 /* Pods-AXONtest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXONtest.release.xcconfig"; path = "Pods/Target Support Files/Pods-AXONtest/Pods-AXONtest.release.xcconfig"; sourceTree = "<group>"; };
+		D63A019721E959CD00DD14CF /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		D66FF6A621E8EF0100DEC6AF /* MainScreenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCell.swift; sourceTree = "<group>"; };
 		F0AE89B52591E48A07021D7B /* Pods_AXONtest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AXONtest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF179FC821E8B6A00076D7B6 /* AXONtest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AXONtest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				FF179FDE21E8B7A70076D7B6 /* MaincScreenTVC.swift */,
+				D63A019721E959CD00DD14CF /* DetailsView.swift */,
 				D66FF6A821E8EF6A00DEC6AF /* View */,
 				FF32571021E8BA3D002CA9BD /* Model */,
 				FF179FDD21E8B6AC0076D7B6 /* Support */,
@@ -294,6 +297,7 @@
 				FF179FCC21E8B6A00076D7B6 /* AppDelegate.swift in Sources */,
 				FF32575421E8BD1B002CA9BD /* Location.swift in Sources */,
 				FF32575621E8BD1B002CA9BD /* Name.swift in Sources */,
+				D63A019821E959CD00DD14CF /* DetailsView.swift in Sources */,
 				FF32575C21E8BD1B002CA9BD /* Id.swift in Sources */,
 				FF32575321E8BD1B002CA9BD /* Coordinates.swift in Sources */,
 			);

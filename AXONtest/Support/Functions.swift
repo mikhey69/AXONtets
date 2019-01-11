@@ -32,9 +32,9 @@ class Functions: NSObject {
             let user = Functions.shared.tern(jsonRes: json)
             appDelegate.userList.append(user)
             //for 20 items
-//            if appDelegate.userList.count < 20 {
-//                self?.requestUser()
-//            }
+            if appDelegate.userList.count < 20 {
+                self?.requestUser()
+            }
             
             DispatchQueue.main.async {
                     NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)

@@ -21,6 +21,11 @@ class MaincScreenTVC: UITableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.update), name: NSNotification.Name("Update"), object: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     @objc func update() {
         tableView.reloadData()
     }
@@ -28,8 +33,6 @@ class MaincScreenTVC: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        print("sd \(appDelegate.userList.count)")
         return appDelegate.userList.count
     }
     
@@ -37,14 +40,31 @@ class MaincScreenTVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InfoCell", for: indexPath) as! MainScreenCell
         let user = appDelegate.userList[indexPath.row]
+        cell.id = user.id.value
+        cell.imgView.load(url: URL(string: user.picture.medium)!)
+        cell.imgView.layer.cornerRadius = 35
         cell.imgView.image = UIImage(named: "")
-        cell.imgView.load2(url: URL(string: user.picture.medium)!)
+        let first = String(user.name.first.first ?? "a").uppercased() + String(user.name.first.dropFirst())
+        let last = String(user.name.last.first ?? "a").uppercased() + String(user.name.last.dropFirst())
+        cell.nameLbl.text = "\(first) \(last)"
+        cell.ageLbl.text = "\(user.dob.age)"
+        cell.imgView.clipsToBounds = true
+        
         return cell
     }
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showDetails", sender: nil)
+        let cell = tableView.cellForRow(at: indexPath) as! MainScreenCell
+        performSegue(withIdentifier: "showDetails", sender: cell.id)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetails" {
+            let id = sender as! String
+            let vc = segue.destination as! DetailsView
+            vc.id = id
+        }
     }
     
     /*
@@ -95,7 +115,7 @@ class MaincScreenTVC: UITableViewController {
 }
 
 extension UIImageView {
-    func load2(url: URL) {
+    func load(url: URL) {
         DispatchQueue.global().async { [weak self] in
             if let data = try? Data(contentsOf: url) {
                 if let image = UIImage(data: data) {
