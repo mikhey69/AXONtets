@@ -1,11 +1,3 @@
-//
-//  MainScreenCell.swift
-//  AXONtest
-//
-//  Created by mikhey on 1/11/19.
-//  Copyright © 2019 softevol. All rights reserved.
-//
-
 import UIKit
 
 class MainScreenCell: UITableViewCell {

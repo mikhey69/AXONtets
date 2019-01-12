@@ -1,11 +1,3 @@
-//
-//  Functions.swift
-//  AXONtest
-//
-//  Created by softevol on 1/11/19.
-//  Copyright © 2019 softevol. All rights reserved.
-//
-
 import Foundation
 import SwiftyJSON
 import Alamofire
@@ -27,17 +19,16 @@ class Functions: NSObject {
                 return
             }
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            print("top")
             let json = JSON(response.result.value!)
             let user = Functions.shared.tern(jsonRes: json)
             appDelegate.userList.append(user)
             //for 20 items
             if appDelegate.userList.count < 20 {
                 self?.requestUser()
-            }
-            
-            DispatchQueue.main.async {
-                    NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
+            } else {
+                DispatchQueue.main.async {
+                    NotificationCenter.default.post(name: NSNotification.Name("DeleteView"), object: nil)
+                }
             }
         }
     }
@@ -97,6 +88,4 @@ class Functions: NSObject {
                              nat: json["nat"].stringValue)
         return user
     }
-    
-    
 }
