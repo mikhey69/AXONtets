@@ -1,0 +1,6 @@
+framework module Pods_AXONtest {
+  umbrella header "Pods-AXONtest-umbrella.h"
+
+  export *
+  module * { export * }
+}
